@@ -31,7 +31,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
+#include <ctype.h>  //
 #include "sds.h"
 
 #ifdef SDS_ABORT_ON_OOM
@@ -45,7 +45,7 @@ sds sdsnewlen(const void *init, size_t initlen) {
     struct sdshdr *sh;
 
     sh = malloc(sizeof(struct sdshdr)+initlen+1);
-#ifdef SDS_ABORT_ON_OOM
+#ifdef SDS_ABORT_ON_OOM         //条件编译还可以用到函数体内
     if (sh == NULL) sdsOomAbort();
 #else
     if (sh == NULL) return NULL;
