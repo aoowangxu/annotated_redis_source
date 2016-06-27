@@ -31,8 +31,8 @@
 #ifndef __SDS_H
 #define __SDS_H
 
-#include <sys/types.h>
-#include <stdarg.h>
+#include <sys/types.h>   //
+#include <stdarg.h>  //
 
 typedef char *sds;
 
@@ -43,7 +43,7 @@ struct sdshdr {
 };
 
 static inline size_t sdslen(const sds s) {
-    struct sdshdr *sh = (void*)(s-(sizeof(struct sdshdr)));
+    struct sdshdr *sh = (void*)(s-(sizeof(struct sdshdr)));  //？？
     return sh->len;
 }
 
